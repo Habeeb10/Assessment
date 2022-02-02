@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './src/screens/home';
+import Character from './src/screens/Character';
 
 export default function App() {
-  return <Home />;
+  return <Character />;
 }
