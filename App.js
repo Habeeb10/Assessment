@@ -1,6 +1,6 @@
 import React from 'react';
-import Character from './src/screens/Character';
+import Navigator from './src/common/navigator/navigation';
 
 export default function App() {
-  return <Character />;
+  return <Navigator />;
 }
