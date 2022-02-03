@@ -5,17 +5,17 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {CharacterCard} from './characterCard';
-import {characterstyles as styles} from './styles';
+import {episodestyles as styles} from './styles';
+import {EpisodeCard} from './episodeCard';
 import {Toback} from '../../../assets/svg';
 
-function Character({navigation}) {
+function Episode({navigation}) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const FetchData = () => {
     setLoading(true);
-    fetch('https://www.breakingbadapi.com/api/characters?limit=12&offset=0')
+    fetch('https://www.breakingbadapi.com/api/episodes')
       .then(response => response.json())
       .then(res => {
         setData(res);
@@ -30,30 +30,17 @@ function Character({navigation}) {
   }, []);
 
   const _renderItem = ({item}) => {
-    const {
-      name,
-      status,
-      occupation,
-      category,
-      nickname,
-      appearance,
-      portrayed,
-      birthday,
-      char_id,
-      url,
-    } = item;
+    const {episode_id, title, season, episode, air_date, characters, series} =
+      item;
     return (
-      <CharacterCard
-        char_id={char_id}
-        name={name}
-        status={status}
-        occupation={occupation}
-        category={category}
-        nickname={nickname}
-        appearance={appearance}
-        portrayed={portrayed}
-        birthday={birthday}
-        imageSource={url}
+      <EpisodeCard
+        episode={episode}
+        episode_id={episode_id}
+        season={season}
+        series={series}
+        title={title}
+        characters={characters}
+        air_date={air_date}
       />
     );
   };
@@ -66,10 +53,9 @@ function Character({navigation}) {
     <>
       <TouchableOpacity
         style={styles.slideicon}
-        onPress={() => navigation.navigate('episode')}>
+        onPress={() => navigation.navigate('character')}>
         <Toback />
       </TouchableOpacity>
-
       <View style={styles.charactercontainer}>
         <FlatList
           contentContainerStyle
@@ -83,7 +69,7 @@ function Character({navigation}) {
   );
 }
 
-export default Character;
+export default Episode;
 
 const LoadingView = () => {
   return (

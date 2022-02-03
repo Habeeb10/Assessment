@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {hp} from '../../common/utils';
 
-export const characterstyles = StyleSheet.create({
+export const episodestyles = StyleSheet.create({
   slideicon: {
     marginBottom: hp(20),
     paddingHorizontal: hp(20),
