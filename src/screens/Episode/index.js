@@ -78,21 +78,3 @@ const LoadingView = () => {
     </View>
   );
 };
-
-// const FetchData = () => {
-//   setLoading(true);
-//   fetch('https://www.breakingbadapi.com/api/')
-//     .then(response => response.json())
-//     .then(res => {
-//       setData(res.data);
-//       console.log(data);
-//     })
-//     .catch(err => err)
-//     .finally(() => setLoading(false));
-// };
-
-// onPress={() =>
-//     navigation.navigate("items", {
-//       details: item,
-//     })
-//   }
