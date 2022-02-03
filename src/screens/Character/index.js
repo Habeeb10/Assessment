@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import {CharacterCard} from './characterCard';
 import {characterstyles as styles} from './styles';
-import {Toback} from '../../../assets/svg';
+import {Icon} from '../../../assets/svg';
 
 function Character({navigation}) {
   const [data, setData] = useState([]);
@@ -67,7 +67,7 @@ function Character({navigation}) {
       <TouchableOpacity
         style={styles.slideicon}
         onPress={() => navigation.navigate('episode')}>
-        <Toback />
+        <Icon />
       </TouchableOpacity>
 
       <View style={styles.charactercontainer}>

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import {episodestyles as styles} from './styles';
 import {EpisodeCard} from './episodeCard';
-import {Toback} from '../../../assets/svg';
+import {Icon} from '../../../assets/svg';
 
 function Episode({navigation}) {
   const [data, setData] = useState([]);
@@ -54,7 +54,7 @@ function Episode({navigation}) {
       <TouchableOpacity
         style={styles.slideicon}
         onPress={() => navigation.navigate('character')}>
-        <Toback />
+        <Icon />
       </TouchableOpacity>
       <View style={styles.charactercontainer}>
         <FlatList
