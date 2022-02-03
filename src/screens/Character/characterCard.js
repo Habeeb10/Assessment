@@ -13,11 +13,11 @@ export const CharacterCard = ({
   portrayed,
   birthday,
   char_id,
-  imagesource,
+  imageSource,
 }) => {
   return (
-    <View>
-      <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
+      <TouchableOpacity>
         <View style={styles.infocontainer}>
           <Text style={styles.character}> {char_id}</Text>
           <Text style={styles.character}> {status}</Text>
@@ -28,15 +28,15 @@ export const CharacterCard = ({
           <Text style={styles.character}> {category}</Text>
           <Text style={styles.character}> {portrayed}</Text>
           <Text style={styles.character}> {birthday}</Text>
-          <View style={styles.image}>
+          {/* <View style={styles.image}>
             <Image
-              style={{width: wp(30), height: hp(30)}}
+              style={{width: '100%'}}
               source={{
-                img: imagesource,
+                uri: imageSource,
               }}
-              resizeMode="contain"
+              resizeMode="cover"
             />
-          </View>
+          </View> */}
         </View>
       </TouchableOpacity>
     </View>
@@ -50,17 +50,17 @@ const styles = StyleSheet.create({
   },
   character: {
     fontSize: hp(15),
-    fontWeight: '400',
   },
 
   container: {
     backgroundColor: colors.white,
     borderRadius: hp(10),
-    borderWidth: 1,
     width: wp(350),
     alignSelf: 'center',
-    height: hp(185),
+    height: hp(190),
     marginBottom: hp(10),
     paddingHorizontal: hp(10),
+    paddingVertical: hp(10),
+    borderWidth: hp(0.5),
   },
 });

@@ -13,7 +13,4 @@ export const characterstyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  charactercontainer: {
-    flex: 1,
-  },
 });

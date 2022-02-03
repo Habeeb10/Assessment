@@ -13,7 +13,4 @@ export const episodestyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  charactercontainer: {
-    flex: 1,
-  },
 });

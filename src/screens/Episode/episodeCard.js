@@ -13,8 +13,8 @@ export const EpisodeCard = ({
   series,
 }) => {
   return (
-    <View>
-      <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
+      <TouchableOpacity>
         <View style={styles.infocontainer}>
           <Text style={styles.character}> {episode_id}</Text>
           <Text style={styles.character}> {title}</Text>
@@ -37,11 +37,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
     borderRadius: hp(10),
-    borderWidth: 1,
+    borderWidth: hp(0.5),
     width: wp(350),
     alignSelf: 'center',
     height: hp(185),
     marginBottom: hp(10),
     paddingHorizontal: hp(10),
+    paddingVertical: hp(10),
   },
 });

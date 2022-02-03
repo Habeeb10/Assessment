@@ -40,7 +40,6 @@ function Character({navigation}) {
       portrayed,
       birthday,
       char_id,
-      url,
     } = item;
     return (
       <CharacterCard
@@ -53,7 +52,6 @@ function Character({navigation}) {
         appearance={appearance}
         portrayed={portrayed}
         birthday={birthday}
-        imageSource={url}
       />
     );
   };
@@ -70,7 +68,7 @@ function Character({navigation}) {
         <Icon />
       </TouchableOpacity>
 
-      <View style={styles.charactercontainer}>
+      <View>
         <FlatList
           contentContainerStyle
           data={data}

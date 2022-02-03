@@ -56,7 +56,7 @@ function Episode({navigation}) {
         onPress={() => navigation.navigate('character')}>
         <Icon />
       </TouchableOpacity>
-      <View style={styles.charactercontainer}>
+      <View>
         <FlatList
           contentContainerStyle
           data={data}
