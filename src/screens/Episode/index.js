@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import {FlatList, View, TouchableOpacity} from 'react-native';
 import {episodestyles as styles} from './styles';
 import {EpisodeCard} from './episodeCard';
 import {Icon} from '../../../assets/svg';
+import {LoadingView} from '../../common/loading';
 
 function Episode({navigation}) {
   const [data, setData] = useState([]);
@@ -70,11 +66,3 @@ function Episode({navigation}) {
 }
 
 export default Episode;
-
-const LoadingView = () => {
-  return (
-    <View style={styles.loading}>
-      <ActivityIndicator size="large" color="black" absoluteFill />
-    </View>
-  );
-};

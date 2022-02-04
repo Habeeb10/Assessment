@@ -1,21 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useCallback, useEffect, useState} from 'react';
+import {FlatList, View, TouchableOpacity} from 'react-native';
 import {CharacterCard} from './characterCard';
 import {characterstyles as styles} from './styles';
 import {Icon} from '../../../assets/svg';
+import {LoadingView} from '../../common/loading';
 
 function Character({navigation}) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [limit, setLimit] = useState(1);
 
-  const FetchData = () => {
+  const FetchData = useCallback(() => {
     setLoading(true);
-    fetch('https://www.breakingbadapi.com/api/characters?limit=12&offset=0')
+    fetch(
+      `https://www.breakingbadapi.com/api/characters?limit=${
+        limit * 12
+      }&offset=0`,
+    )
       .then(response => response.json())
       .then(res => {
         setData(res);
@@ -23,11 +24,16 @@ function Character({navigation}) {
       })
       .catch(err => err)
       .finally(() => setLoading(false));
+  }, [limit]);
+
+  console.log(limit);
+  const onReachEnd = () => {
+    setLimit(prev => prev + 1);
   };
 
   useEffect(() => {
     FetchData();
-  }, []);
+  }, [FetchData]);
 
   const _renderItem = ({item}) => {
     const {
@@ -75,6 +81,7 @@ function Character({navigation}) {
           showsVerticalScrollIndicator={false}
           keyExtractor={(_, index) => index.toString()}
           renderItem={_renderItem}
+          onEndReached={onReachEnd}
         />
       </View>
     </>
@@ -82,11 +89,3 @@ function Character({navigation}) {
 }
 
 export default Character;
-
-const LoadingView = () => {
-  return (
-    <View style={styles.loading}>
-      <ActivityIndicator size="large" color="black" absoluteFill />
-    </View>
-  );
-};

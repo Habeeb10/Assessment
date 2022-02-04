@@ -3,7 +3,7 @@ import {hp} from '../../common/utils';
 
 export const episodestyles = StyleSheet.create({
   slideicon: {
-    marginBottom: hp(20),
+    marginBottom: hp(10),
     paddingHorizontal: hp(20),
     alignSelf: 'flex-end',
     marginTop: hp(70),

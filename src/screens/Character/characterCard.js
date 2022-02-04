@@ -20,14 +20,14 @@ export const CharacterCard = ({
       <TouchableOpacity>
         <View style={styles.infocontainer}>
           <Text style={styles.character}> {char_id}</Text>
-          <Text style={styles.character}> {status}</Text>
-          <Text style={styles.character}> {name}</Text>
+          {/* <Text style={styles.character}> {status}</Text> */}
+          <Text style={styles.name}> {name}</Text>
           <Text style={styles.character}> {occupation}</Text>
-          <Text style={styles.character}> {nickname}</Text>
+          {/* <Text style={styles.character}> {nickname}</Text>
           <Text style={styles.character}> {appearance}</Text>
           <Text style={styles.character}> {category}</Text>
           <Text style={styles.character}> {portrayed}</Text>
-          <Text style={styles.character}> {birthday}</Text>
+          <Text style={styles.character}> {birthday}</Text> */}
           {/* <View style={styles.image}>
             <Image
               style={{width: '100%'}}
@@ -43,8 +43,12 @@ export const CharacterCard = ({
   );
 };
 const styles = StyleSheet.create({
+  name: {
+    fontSize: hp(15),
+    fontWeight: 'bold',
+  },
+  infocontainer: {},
   slideicon: {
-    marginBottom: hp(20),
     paddingHorizontal: hp(10),
     alignSelf: 'flex-end',
   },
@@ -57,10 +61,10 @@ const styles = StyleSheet.create({
     borderRadius: hp(10),
     width: wp(350),
     alignSelf: 'center',
-    height: hp(190),
-    marginBottom: hp(10),
+    marginBottom: hp(5),
     paddingHorizontal: hp(10),
     paddingVertical: hp(10),
     borderWidth: hp(0.5),
+    borderColor: colors.snuff,
   },
 });
