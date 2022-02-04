@@ -7,13 +7,16 @@ export const CharacterCard = ({name, category, char_id, imageSource}) => {
   return (
     <View style={styles.container}>
       <View style={styles.itemcontainer}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: imageSource,
-          }}
-          resizeMode="cover"
-        />
+        <TouchableOpacity>
+          <Image
+            style={styles.image}
+            source={{
+              uri: imageSource,
+            }}
+            resizeMode="cover"
+          />
+        </TouchableOpacity>
+
         <TouchableOpacity>
           <View style={styles.infocontainer}>
             <Text style={styles.character}> {char_id}</Text>
