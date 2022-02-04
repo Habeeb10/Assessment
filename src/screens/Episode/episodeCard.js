@@ -16,20 +16,27 @@ export const EpisodeCard = ({
     <View style={styles.container}>
       <TouchableOpacity>
         <View style={styles.infocontainer}>
-          <Text style={styles.character}> {episode_id}</Text>
-          <Text style={styles.character}> {title}</Text>
-          {/* <Text style={styles.character}> {season}</Text>
-          <Text style={styles.character}> {episode}</Text> */}
+          <Text style={styles.episode_id}> {episode_id}</Text>
+          <Text style={styles.title}> {title}</Text>
+          <Text style={styles.series}> {series}</Text>
+          {/* <Text style={styles.character}> {episode}</Text>
           <Text style={styles.character}> {air_date}</Text>
-          {/* <Text style={styles.character}> {characters}</Text>
-          <Text style={styles.character}> {series}</Text> */}
+          <Text style={styles.character}> {characters}</Text>
+          <Text style={styles.character}> {season}</Text> */}
         </View>
       </TouchableOpacity>
     </View>
   );
 };
 const styles = StyleSheet.create({
-  character: {
+  series: {
+    fontSize: hp(15),
+  },
+  title: {
+    fontSize: hp(15),
+    fontWeight: 'bold',
+  },
+  episode_id: {
     fontSize: hp(15),
     fontWeight: '400',
   },
@@ -39,10 +46,11 @@ const styles = StyleSheet.create({
     borderRadius: hp(10),
     width: wp(350),
     alignSelf: 'center',
-    marginBottom: hp(5),
+    marginBottom: hp(20),
     paddingHorizontal: hp(10),
     paddingVertical: hp(10),
     borderWidth: hp(0.5),
     borderColor: colors.irishblue,
+    justifyContent: 'center',
   },
 });

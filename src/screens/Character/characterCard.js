@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import {hp, wp} from '../../common/utils';
 import * as colors from '../../common/colors';
 
@@ -22,21 +22,21 @@ export const CharacterCard = ({
           <Text style={styles.character}> {char_id}</Text>
           {/* <Text style={styles.character}> {status}</Text> */}
           <Text style={styles.name}> {name}</Text>
-          <Text style={styles.character}> {occupation}</Text>
-          {/* <Text style={styles.character}> {nickname}</Text>
-          <Text style={styles.character}> {appearance}</Text>
-          <Text style={styles.character}> {category}</Text>
-          <Text style={styles.character}> {portrayed}</Text>
-          <Text style={styles.character}> {birthday}</Text> */}
-          {/* <View style={styles.image}>
+          {/* <Text style={styles.character}> {occupation}</Text> */}
+          {/* <Text style={styles.character}> {nickname}</Text> */}
+          {/* <Text style={styles.character}> {appearance}</Text> */}
+          <Text style={styles.category}> {category}</Text>
+          {/* <Text style={styles.character}> {portrayed}</Text> */}
+          {/* <Text style={styles.character}> {birthday}</Text> */}
+          <View style={styles.image}>
             <Image
-              style={{width: '100%'}}
+              style={{width: 40, height: 40, borderRadius: 40}}
               source={{
                 uri: imageSource,
               }}
               resizeMode="cover"
             />
-          </View> */}
+          </View>
         </View>
       </TouchableOpacity>
     </View>
@@ -47,24 +47,19 @@ const styles = StyleSheet.create({
     fontSize: hp(15),
     fontWeight: 'bold',
   },
-  infocontainer: {},
-  slideicon: {
-    paddingHorizontal: hp(10),
-    alignSelf: 'flex-end',
-  },
-  character: {
+  category: {
     fontSize: hp(15),
   },
-
   container: {
     backgroundColor: colors.white,
     borderRadius: hp(10),
     width: wp(350),
     alignSelf: 'center',
-    marginBottom: hp(5),
+    marginBottom: hp(20),
     paddingHorizontal: hp(10),
     paddingVertical: hp(10),
     borderWidth: hp(0.5),
     borderColor: colors.snuff,
+    justifyContent: 'center',
   },
 });
