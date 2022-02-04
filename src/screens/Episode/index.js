@@ -26,19 +26,8 @@ function Episode({navigation}) {
   }, []);
 
   const _renderItem = ({item}) => {
-    const {episode_id, title, season, episode, air_date, characters, series} =
-      item;
-    return (
-      <EpisodeCard
-        episode={episode}
-        episode_id={episode_id}
-        season={season}
-        series={series}
-        title={title}
-        characters={characters}
-        air_date={air_date}
-      />
-    );
+    const {title, episode, series} = item;
+    return <EpisodeCard episode={episode} series={series} title={title} />;
   };
 
   if (loading) {

@@ -3,46 +3,41 @@ import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import {hp, wp} from '../../common/utils';
 import * as colors from '../../common/colors';
 
-export const CharacterCard = ({
-  name,
-  status,
-  occupation,
-  nickname,
-  appearance,
-  category,
-  portrayed,
-  birthday,
-  char_id,
-  imageSource,
-}) => {
+export const CharacterCard = ({name, category, char_id, imageSource}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
-        <View style={styles.infocontainer}>
-          <Text style={styles.character}> {char_id}</Text>
-          {/* <Text style={styles.character}> {status}</Text> */}
-          <Text style={styles.name}> {name}</Text>
-          {/* <Text style={styles.character}> {occupation}</Text> */}
-          {/* <Text style={styles.character}> {nickname}</Text> */}
-          {/* <Text style={styles.character}> {appearance}</Text> */}
-          <Text style={styles.category}> {category}</Text>
-          {/* <Text style={styles.character}> {portrayed}</Text> */}
-          {/* <Text style={styles.character}> {birthday}</Text> */}
-          <View style={styles.image}>
-            <Image
-              style={{width: 40, height: 40, borderRadius: 40}}
-              source={{
-                uri: imageSource,
-              }}
-              resizeMode="cover"
-            />
+      <View style={styles.itemcontainer}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: imageSource,
+          }}
+          resizeMode="cover"
+        />
+        <TouchableOpacity>
+          <View style={styles.infocontainer}>
+            <Text style={styles.character}> {char_id}</Text>
+            <Text style={styles.name}> {name}</Text>
+            <Text style={styles.category}> {category}</Text>
           </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
+  infocontainer: {
+    marginLeft: hp(5),
+  },
+  itemcontainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  image: {
+    width: wp(45),
+    height: hp(50),
+    borderRadius: hp(40),
+  },
   name: {
     fontSize: hp(15),
     fontWeight: 'bold',
@@ -60,6 +55,5 @@ const styles = StyleSheet.create({
     paddingVertical: hp(10),
     borderWidth: hp(0.5),
     borderColor: colors.snuff,
-    justifyContent: 'center',
   },
 });

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList, View, TouchableOpacity} from 'react-native';
 import {CharacterCard} from './characterCard';
 import {characterstyles as styles} from './styles';
@@ -44,29 +44,12 @@ function Character({navigation}) {
   }, [limit]);
 
   const _renderItem = ({item}) => {
-    const {
-      name,
-      status,
-      occupation,
-      category,
-      nickname,
-      appearance,
-      portrayed,
-      birthday,
-      char_id,
-      img,
-    } = item;
+    const {name, category, char_id, img} = item;
     return (
       <CharacterCard
         char_id={char_id}
         name={name}
-        status={status}
-        occupation={occupation}
         category={category}
-        nickname={nickname}
-        appearance={appearance}
-        portrayed={portrayed}
-        birthday={birthday}
         imageSource={img}
       />
     );

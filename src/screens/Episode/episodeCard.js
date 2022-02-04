@@ -3,15 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {hp, wp} from '../../common/utils';
 import * as colors from '../../common/colors';
 
-export const EpisodeCard = ({
-  episode_id,
-  title,
-  season,
-  episode,
-  air_date,
-  characters,
-  series,
-}) => {
+export const EpisodeCard = ({episode_id, title, series}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -19,10 +11,6 @@ export const EpisodeCard = ({
           <Text style={styles.episode_id}> {episode_id}</Text>
           <Text style={styles.title}> {title}</Text>
           <Text style={styles.series}> {series}</Text>
-          {/* <Text style={styles.character}> {episode}</Text>
-          <Text style={styles.character}> {air_date}</Text>
-          <Text style={styles.character}> {characters}</Text>
-          <Text style={styles.character}> {season}</Text> */}
         </View>
       </TouchableOpacity>
     </View>
