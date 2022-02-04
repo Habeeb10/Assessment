@@ -76,7 +76,7 @@ function Character({navigation}) {
           renderItem={_renderItem}
           onEndReached={onReachEnd}
           ListFooterComponent={loadingmore && renderFooter()}
-          onEndReachedThreshold={0.9}
+          onEndReachedThreshold={0.7}
         />
       </View>
     </>

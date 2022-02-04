@@ -3,12 +3,12 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {hp, wp} from '../../common/utils';
 import * as colors from '../../common/colors';
 
-export const EpisodeCard = ({episode_id, title, series}) => {
+export const EpisodeCard = ({episode, title, series}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
         <View style={styles.infocontainer}>
-          <Text style={styles.episode_id}> {episode_id}</Text>
+          <Text style={styles.episode}> {episode}</Text>
           <Text style={styles.title}> {title}</Text>
           <Text style={styles.series}> {series}</Text>
         </View>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     fontSize: hp(15),
     fontWeight: 'bold',
   },
-  episode_id: {
+  episode: {
     fontSize: hp(15),
     fontWeight: '400',
   },
